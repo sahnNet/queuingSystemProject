@@ -1,0 +1,300 @@
+{% extends 'shared/_MainLayout.html' %}
+{% load static %}
+{% load render_partial %}
+
+{% block content %}
+
+    <header>
+        <!--banner-->
+        <div class="banner text-light text-left font-weight-bold ">
+            <h2 class="banner-heading text-center">{{ navbarTitle }}</h2>
+            <p class="banner-text text-center my-4">{{ navbarText }}</p>
+            <p class="text-light text-center lh-2 ml-5  header-text">{{ navbarDescriptions }}</p>
+        </div>
+        <!--end of banner-->
+    </header>
+    <!-- Script search -->
+    <script type="text/javascript">
+        function provinces() {
+            const province = document.getElementById("province").value;
+
+            let result = "<option value=" + 0 + ">" + "{{ cities }}" + "</option>"
+
+            {% for city in citiesList.all %}
+                if ("{{ city.province.id }}" === province || province === "0")
+                    result += "<option value=" + "{{ city.id }}" + ">" + "{{ city.name }}" + "</option>"
+            {% endfor %}
+            document.getElementById("city").innerHTML = result
+            cities()
+        }
+
+        function cities() {
+            const city = document.getElementById("city").value;
+            const province = document.getElementById("province").value;
+
+            let result = "<option value=" + 0 + ">" + "{{ hospitals }}" + "</option>"
+
+            {% for hospital in hospitalsList.all %}
+                if ("{{ hospital.city.id }}" === city
+                    || ("{{ hospital.city.province.id }}" === province || province === "0") & city === "0")
+                    result += "<option value=" + "{{ hospital.id }}" + ">" + "{{ hospital.name }}" + "</option>"
+            {% endfor %}
+            document.getElementById("hospital").innerHTML = result
+        }
+
+    </script>
+    <!-- /Script search -->
+    <div class="container py-4">
+        <h4 class="text-center mb-5 Search">{{ searchTitle }}</h4>
+        <div class="row justify-content-center">
+            <form class="form" action="{% url 'appointmentView' %}" method="get">
+
+                <div class="input-group">
+                    <select class="form-control Resp" id="province" name="p" onchange="provinces()">
+                        <option value="0">{{ provinces }}</option>
+                        {% for province in provincesList %}
+                            <option value="{{ province.id }}">{{ province.name }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <select class="form-control Resp" id="city" name="c" onchange="cities()">
+                        <option value="0">{{ cities }}</option>
+                        {% for city in citiesList %}
+                            <option value="{{ city.id }}">{{ city.name }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <select class="form-control Resp" id="hospital" name="h">
+                        <option value="0">{{ hospitals }}</option>
+                        {% for hospital in hospitalsList %}
+                            <option value="{{ hospital.id }}">{{ hospital.name }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <div class="input-group-append">
+                        <button class="btn btn-success btn-sm" type="submit">
+                            {{ search }} <i class="fas fa-search text-danger mx-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--end of header-->
+
+    <!-- Awards -->
+    <section id="s2" class="p-5  bg-dark ">
+
+        <div class="container-fluid">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 col-xl-6 col-md-10  text-center ">
+                    <h1 class="text-white">{{ honors }}</h1>
+                    <div class="underline my-5"></div>
+                    <p class="text-muted h5 lh-2  "></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <div class="col-lg-4 text-center my-5 ">
+                <i class="fas fa-medal fa-5x text-warning"></i>
+                <h1 class=" text-white mb-3">{{ topBadge }}</h1>
+                <p class="text-muted lh-1"></p>
+            </div>
+
+            <div class="col-lg-4 text-center my-5">
+                <i class="fas fa-leaf fa-5x text-success"></i>
+                <h1 class="text-white mb-3">{{ healthBadge }}</h1>
+                <p class="text-muted lh-1"></p>
+            </div>
+
+            <div class="col-lg-4 text-center my-5">
+                <i class="fas fa-award fa-5x text-danger"></i>
+                <h1 class="text-white mb-3">{{ qualitativelySelected }}</h1>
+                <p class="text-muted lh-1"></p>
+            </div>
+        </div>
+
+        <div class="container mt-3">
+            <div class="row ">
+                <div class="col-lg-6   text-center text-lg-right  text-white Awards-Animation1  ">
+                    <h1 class="mb-4">{{ qualityService }}</h1>
+                    <p class="lh-2">{{ qualityServiceDescriptions }}</div>
+
+                <div class="col-lg-6 text-center  ">
+                    <img class="img-fluid  Awards-Animation2"
+                         src="{% static 'Images/NicePng_full-body-png_9336138.png' %}"
+                         title="Doctor" alt="doctor" style="width:300px ; height:400px"/>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--end of Awards-->
+
+    <!-- Services -->
+    <section id="s3" class="bg-secondary p-4 ">
+        <div class="container-fluid">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 col-xl-6 col-md-10  text-center ">
+                    <h1 class="text-white">{{ services }}</h1>
+                    <div class="underline my-5"></div>
+                    <p class="text-white h5 lh-2  ">{{ serviceDescriptions }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 my-5">
+                <div class="card card-shadow border-0">
+                    <img class="card-img"
+                         src="{% static 'Images/October 2015 News _ Michigan Medicine - Copy.jpg' %}"
+                         alt="healthy food" style="height :340px"/>
+                    <div class="card-img-overlay">
+                        <h1 class="text-white heading p-2">{{ hygiene }}</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 my-5">
+                <div class="card  card-shadow border-0">
+                    <img class="card-img" src="{% static 'Images/gallery5.png' %}" alt="healthy food"
+                         style="height :340px"/>
+                    <div class="card-img-overlay">
+                        <h1 class="text-white heading p-2 ">{{ experiencedDoctors }}</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 my-5">
+                <div class="card  card-shadow border-0">
+                    <img class="card-img" src="{% static 'Images/gallery3.jpg' %}" alt="healthy food"
+                         style="height :340px"/>
+                    <div class="card-img-overlay">
+                        <h1 class="text-white heading p-2">{{ smartEquipment }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end of Services-->
+
+    <!-- Gallery -->
+    <section id="s4" class="py-5">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-6 col-sm-10 text-center">
+                    <h1 class="text-muted">{{ gallery }}</h1>
+                    <div class="underline-dark my-4"></div>
+                    <p class="text-muted h5 lh-2  "></p>
+                </div>
+            </div>
+        </div>
+
+        <ul class="list-unsettled list-inline text-center my-5">
+            <li data-active="total" class="list-inline-item Gallery-item active-item">
+                {{ all }} <span class="text-muted mx-2">/</span>
+            </li>
+            <li data-active="part1" class="list-inline-item Gallery-item">{{ partOne }}<span
+                    class="text-muted mx-2">/</span>
+            </li>
+            <li data-active="part2" class="list-inline-item Gallery-item">{{ partTwo }}<span
+                    class="text-muted mx-2">/</span>
+            </li>
+            <li data-active="part3" class="list-inline-item Gallery-item">{{ partThree }}</li>
+        </ul>
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap justify-content-center">
+                <div class="m-1 part1 part3 General">
+                    <img src="{% static 'Images/cat8.jpg' %}" alt="Hospital" style="width:400px ; height:230px"/>
+                </div>
+                <div class="m-1 part2 General">
+                    <img src="{% static 'Images/Gallery44.jpg' %}" alt="hospital"
+                         style="width:400px ; height:230px"/>
+                </div>
+
+                <div class="m-1 part1 part3 General">
+                    <img src="{% static 'Images/gallery12.jpg' %}" alt="hospital"
+                         style="width:400px ; height:230px"/>
+                </div>
+
+                <div class="m-1 part2 General">
+                    <img src="{% static 'Images/icu.jpg' %}" alt="hospital" style="width:400px ; height:230px"/>
+                </div>
+
+                <div class="m-1 part1 General">
+                    <img src="{% static 'Images/4(1).jpg' %}" alt="hospital" style="width:400px ; height:230px"/>
+                </div>
+
+                <div class="m-1 part2 part3 General">
+                    <img src="{% static 'Images/gallery5.png' %}" alt="hospital"
+                         style="width:400px ; height:230px"/>
+                </div>
+
+                <div class="m-1 part1 part3 General">
+                    <img src="{% static 'Images/G2.jpg' %}" alt="hospital" style="width:400px ; height:230px"/>
+                </div>
+                <div class="m-1 part2 General">
+                    <img src="{% static 'Images/gallery4.jpg' %}" alt="hospital"
+                         style="width:400px ; height:230px"/>
+                </div>
+                <div class="m-1 part1 part3 General">
+                    <img src="{% static 'Images/cat4.jpg' %}" alt="hospital" style="width:400px ; height:230px"/>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end of Gallery-->
+
+    <!-- Slide Show -->
+    <section id="s5" class="py-4 Slide-Theme">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-6 col-md-10 text-center">
+                    <h1 class="text-white mb-4">{{ physicians }}</h1>
+                    <p class="text-white h5 lh-2  "></p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid my-3">
+            <div class="row justify-content-center">
+                <div class="col text-center">
+                    <div class="carousel slide" id="my-carousel" data-interval="2000" data-ride="carousel">
+                        <div class="carousel-inner">
+                            {% for doctor in doctorsList %}
+                                <div class="carousel-item{{ forloop.first|yesno:" active," }}">
+                                    <img class="rounded-circle" src="{{ doctor.image.url }}"
+                                         alt="{{ doctor.full_name }}"
+                                         style="width:300px ; height:230px"/>
+                                    <div class="carousel-content">
+                                        <h2 class="text-white">{{ doctor.full_name }}</h2>
+                                        <h5 class="text-white">{{ doctor.hospital.name }}</h5>
+                                        <p class="h5 text-white">{{ doctor.specialty.name }}</p>
+                                        <a href="{% url 'doctorPageView' d=doctor.id %}"
+                                           class="btn btn-light submission">{{ getAppointment }}</a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <a class="carousel-control-prev" data-target="#my-carousel" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" data-target="#my-carousel" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end of Slide Show-->
+
+    <!--Contact-->
+    {% render_partial 'contactusView' %}
+    <!--End Of Contact-->
+
+
+
+{% endblock %}

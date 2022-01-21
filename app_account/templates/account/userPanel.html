@@ -1,0 +1,65 @@
+{% extends 'shared/_MainLayout.html' %}
+{% load render_partial %}
+
+{% block content %}
+    <div class="container-fluid p-5 mt-5">
+        <div class="row justify-content-center mt-3">
+            <!--userCard-->
+            {% render_partial 'accountCardView' %}
+            <!--End Of userCard-->
+            <!--user's Appointment information table-->
+            <div class="col-md-9 col-xs-6 mt-5">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h6>{{ myTurns }}</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <div class="thead">
+                                    <th>{{ row }}</th>
+                                    <th>{{ shift }}</th>
+                                    <th>{{ turn }}</th>
+                                    <th>{{ doctor }}</th>
+                                    <th>{{ medicalCenter }}</th>
+                                    <th>{{ province }}</th>
+                                    <th>{{ city }}</th>
+                                    <th>{{ date }}</th>
+                                    <th>{{ time }}</th>
+                                    <th>{{ turnFile }}</th>
+                                </div>
+                                <div class="tbody">
+                                    {% for turn in turnsList %}
+                                        <tr>
+                                            <td>{{ forloop.counter }}</td>
+                                            <td>{{ turn.shift }}</td>
+                                            <td>{{ turn.turn_number }}</td>
+                                            <td>{{ turn.doctor.full_name }}</td>
+                                            <td>{{ turn.doctor.hospital.name }}</td>
+                                            <td>{{ turn.doctor.hospital.city.province.name }}</td>
+                                            <td>{{ turn.doctor.hospital.city.name }}</td>
+                                            {% if LANGUAGE_BIDI %}
+                                                <td>{{ turn.get_date_fa }}</td>
+                                            {% else %}
+                                                <td>{{ turn.get_date_en }}</td>
+                                            {% endif %}
+                                            <td>{{ turn.visiting_hours }}</td>
+                                            <td><a href="{% url 'someView' a=turn.id %}"
+                                                   class=" btn text-success "> <i
+                                                    class="fas fa-download"></i>
+                                            </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Of user's Appointment information table-->
+        </div>
+    </div>
+    <!--End Of userCard-->
+{% endblock %}
+

@@ -1,0 +1,141 @@
+{% extends 'shared/_MainLayout.html' %}
+{% load static %}
+
+{% block content %}
+    <!--profile-->
+    <div class="container-fluid">
+        <div class="row justify-content-center mt-5">
+            <div class="col-3 d-none d-md-block">
+                <img style="height:400px; width:400px" class="img-fluid rounded my-2 py-5"
+                     src="{{ doctor.image.url }}"/>
+                <span class="text-center text-black-50 mr-5  badge badge-warning ">{{ doctor.full_name }}</span>
+                <div class="card ">
+                    <div class="card-header">
+                        <h6 class="text-center">{{ physicianContactInformation }}</h6>
+                    </div>
+                    <div class="card-body d-flex  flex-column justify-content-center p-4">
+                        <div class="mr-auto">{% if doctor.email is not None %}doctor.email{% endif %}<i
+                                class="fas  fa-envelope   "></i>
+                        </div>
+                        <i class="fab     fa-telegram   fa-lg         my-2     mr-auto    text-primary"></i>
+                        <i class="fab     fa-instagram  fa-lg         my-2     mr-auto    text-danger"></i>
+                        <i class="fab     fa-twitter    fa-lg         my-2     mr-auto    text-info"></i>
+                        <i class="fab     fa-facebook   fa-lg         my-2     mr-auto    text-info"></i>
+                    </div>
+                </div>
+                <div class="card my-3">
+                    <div class="card-header text-center">
+                        <h6 class=""><i class="fas fa-clipboard-list text-info fa-lg  mx-3 "></i>{{ specialties }}</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">{{ doctor.specialty.name }}</div>
+                    </div>
+                </div>
+                <div class="card my-3">
+                    <div class="card-header text-center">
+                        <h6 class=""><i class="fas fa-user-md  text-black-50  fa-lg  mx-2 "></i>{{ EducationAcademy }}
+                        </h6>
+                    </div>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+                <div class="card my-3">
+                    <div class="card-header text-center">
+                        <h6 class=""><i class="fas fa-medal text-success fa-lg  mx-3 "></i>{{ honorsAndAwards }}</h6>
+                    </div>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+            <!--End Of Profile-->
+
+            <!--Appointment Part-->
+            <div class="col-9 mt-5">
+                <div class="container text-center ">
+                    <h5 class="my-5 text-info">{{ yourPeaceAndHealthIsOurMainGoal }}</h5>
+                </div>
+                <div class="container">
+                    <div class="alert alert-success alert-dismissible show fade">
+                        <h6 class="text-center mb-3">{{ doctor.full_name }}</h6>
+                        {% if LANGUAGE_BIDI %}
+                            <h6 class="text-center my-4 move">{{ tomorrowFa }}</h6>
+                        {% else %}
+                            <h6 class="text-center my-4 move">{{ tomorrowEn }}</h6>
+                        {% endif %}
+                        <form action="{% url 'setAppointmentView' %}" method="post">
+                            {% csrf_token %}
+                            <div class="form-check text-center">
+                                {% if doctor.is_morning_shift and not doctor.is_full_morning_turn %}
+                                    <label class="mx-4" for="morning">{{ morning }}</label>
+                                    <input id="morning" type="radio" value="morning" class="form-check-input "
+                                           name="shift" {% if shift == "morning" %} checked {% endif %}>
+                                {% endif %}
+                            </div>
+                            <div class="form-check text-center">
+                                {% if doctor.is_evening_shift and not doctor.is_full_evening_turn %}
+                                    <label class="mx-4" for="evening">{{ evening }}</label>
+                                    <input id="evening" type="radio" value="evening" class="form-check-input"
+                                           name="shift"{% if shift == "evening" %} checked {% endif %}>
+                                {% endif %}
+
+                            </div>
+                            <div class="form-check text-center">
+                                {% if doctor.is_night_shift and not doctor.is_full_night_turn %}
+                                    <label class="mx-4" for="evening">{{ night }}</label>
+                                    <input id="evening" type="radio" value="night" class="form-check-input"
+                                           name="shift"{% if shift == "night" %} checked {% endif %}>
+                                {% endif %}
+
+                            </div>
+                            <div class="row justify-content-center">
+                                <button class="btn btn-success  mx-3  my-3 " type="submit" name="d"
+                                        value="{{ doctor.id }}">{{ ok }}</button>
+                                <a href="{% url 'homeView' %}" class="btn btn-danger    submit-btn   my-3 "
+                                   type="submit">{{ cancel }}</a>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="card my-3">
+                        <div class="card-header">
+                            <h6>{{ introductionOfOffices }}</h6>
+                        </div>
+                        <div style="background : linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6))" class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover text-light">
+                                    <div class="thead">
+                                        <th>{{ hospital }}</th>
+                                        <th>{{ telephoneNumber }}</th>
+                                        <th>{{ province }}</th>
+                                        <th>{{ city }}</th>
+                                    </div>
+                                    <div class="tbody">
+                                        <tr>
+                                            <td>{{ doctor.hospital.name }}</td>
+                                            <td>{{ doctor.hospital.telephone_number }}</td>
+                                            <td>{{ doctor.hospital.city.province.name }}</td>
+                                            <td>{{ doctor.hospital.city.name }}</td>
+                                        </tr>
+                                    </div>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card my-3">
+                        {% if doctor.hospital.location.url is not None %}
+                            <div class="card-header">
+                                <h6><i class="fas fa-map-marker-alt text-danger ml-3"> </i>{{ ShowOnTheMap }}</h6>
+                            </div>
+
+                            <img class="card-img" src="{{ doctor.hospital.location.url }}"/>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Of Appointment Part-->
+{% endblock %}

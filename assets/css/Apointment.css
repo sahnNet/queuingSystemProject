@@ -1,0 +1,107 @@
+@font-face{
+    src:url(../Fonts/iranyekanwebbold.ttf);
+    font-family : yekan;
+}
+
+
+body{
+    font-family : yekan ;
+   
+  
+}
+
+
+/* line-height  Utility  */
+.lh-1{
+    line-height : 30px;
+}
+.lh-2{
+    line-height : 35px;
+}
+
+/* End Of line-height Utility */
+
+
+/* Header */
+
+.navbar-styles{
+    padding:30px;
+    background: linear-gradient(rgba(0,0,0,0.3) ,rgba(0,0,0,0.5));
+
+}
+
+.nav-fade{
+    padding:5px 30px;
+    background: linear-gradient(rgba(0,0,0,0.3) ,rgba(0,0,0,0.5));
+}
+
+.line-1 , .line-2 , .line-3 {
+width:23px ;
+height:3px;
+margin : 5px;
+transition : all 0.4s;
+
+}
+
+
+.change .line-1{
+    transform : rotate(-45deg) translate(-6px , 5px);
+}
+
+.change .line-2{
+    opacity : 0;
+}
+
+.change .line-3{
+    transform : rotate(45deg) translate(-6px ,-5px);
+   }
+
+
+.menu-item{
+
+    color:#eee;
+    font-size:16px;
+    transition : all .5s ;
+}
+
+.menu-item:hover{
+    color:#2980b9;
+}
+
+
+/* End Of Header */
+
+
+
+.btn-change{
+
+    background-color :#6b8e23;
+}
+
+
+.btn-change:hover{
+
+    background-color :#6b8e23;
+}
+
+
+ 
+/* Footer */
+.Footer{
+
+   background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4));
+}
+.Footer-link{
+
+    color:#eee;
+    font-size:14px;
+    transition:all .4s;
+}
+
+.Footer-link:hover{
+    color:#2980b9;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+/* End Of Footer */

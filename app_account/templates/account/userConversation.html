@@ -1,0 +1,43 @@
+{% extends 'shared/_MainLayout.html' %}
+{% load render_partial %}
+
+{% block content %}
+    <div class="container-fluid p-5 mt-5">
+        <div class="row justify-content-center mt-3">
+            <!--userCard-->
+            {% render_partial 'accountCardView' %}
+            <!--End Of userCard-->
+
+            <!--Sample User-Conversation-->
+            <div class="col-md-6  py-5">
+                <div class="accordion" id="myAccordion">
+                    <div class="card">
+                        <div class="card-header bg-dark text-center">
+                            <button class="btn text-light" data-toggle="collapse"
+                                    data-target="#myCollapseMain">{{ email }}</button>
+                        </div>
+                        <div class="collapse" id="myCollapseMain" data-parent="#myAccordion">
+                            <div class="card-body ">
+                                {{ userEmail }}
+                            </div>
+                        </div>
+                    </div>
+                    {% for conversation in conversationList %}
+                        <div class="card">
+                            <div class="card-header  bg-dark text-center">
+                                <button class="btn text-light" data-toggle="collapse"
+                                        data-target="#myCollapse{{ conversation.id }}">{{ conversation.subject }}</button>
+                            </div>
+                            <div class="collapse" id="myCollapse{{ conversation.id }}" data-parent="#myAccordion">
+                                <div class="card-body">{{ conversation.text }}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Of User-Conversation-->
+{% endblock %}
+

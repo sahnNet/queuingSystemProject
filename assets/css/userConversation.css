@@ -1,0 +1,132 @@
+@font-face{
+    src:url(../Fonts/iranyekanwebbold.ttf) ;
+    font-family : yekan ;
+    
+    }
+    
+    body{
+        font-family: yekan;
+        background-color:#eee;
+        font-size:14px;
+        background: url(../Images/Royal\ Blue.jpg);
+   
+    }
+    
+
+    /* utility */
+     
+   
+
+ 
+    /* End of utility */
+
+    /* responsive font style */
+    @media(max-width : 992px){
+        *{
+            font-size:10px;
+        }
+    }
+    
+    /* End Of responsive font style * /
+    
+    
+    
+    /* userCard */
+     .underline{
+       width:100%;
+       height:2px;
+
+     }
+
+    .Card-Link{
+      text-decoration:none;
+      color:#000212b6;
+      transition:all 0.4s;
+    }
+    .Card-Link:hover{
+        text-decoration:none;
+        cursor:pointer;
+        color:#2980b9;
+      }
+
+    
+/* End Of userCard */
+ 
+
+/* header */
+    
+/* navigartion bar */
+    
+    .nav-styles{
+        padding : 18px ;
+        background : linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+    }
+    
+    
+    .nav-fade{
+    
+       padding : 6px 30px;
+       background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.7));
+    }
+    
+    
+    .line-1 , .line-2 , .line-3{
+        width  :23px;
+        height :3px;
+        margin :5px;
+        transition :all 0.4s;
+    }
+    
+    .change .line-1{
+    
+        transform:rotate(-45deg) translate(-6px , 5px);
+    
+    } 
+    .change .line-2{
+        opacity: 0 ;
+    
+    }
+    
+    .change .line-3{
+        transform:rotate(45deg) translate(-6px , -5px);
+    }
+    
+    
+    .menu-item{
+    
+        color:#eee;
+        font-size:16px;
+        transition : all .5s ;
+    }
+    
+    .menu-item:hover{
+        color:#2980b9;
+    }
+
+
+
+/* End Of navigartion bar */
+    
+/* End Of header */
+    
+/* Footer */
+.Footer{
+
+    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4));
+ }
+ .Footer-link{
+ 
+     color:#eee;
+     font-size:14px;
+     transition:all .4s;
+ }
+ 
+ .Footer-link:hover{
+     color:#2980b9;
+     cursor:pointer;
+     text-decoration:none;
+ }
+ 
+ /* End Of Footer */
+ 
+    

@@ -1,0 +1,113 @@
+
+@font-face{
+  src:url("../Fonts/iranyekanwebbold.ttf")  format("truetype");
+  font-family:yekan;
+}
+
+body{
+    font-family:yekan;
+}
+
+.nav-styles{
+    padding : 22px;
+    background : linear-gradient(rgba(0 , 0 , 0 ,.3) , rgba(0 , 0 , 0 , .7));
+    /*transition : all .7s ;*/
+}
+
+
+
+.nav-fade{
+
+    padding : 5px 22px;
+    background :linear-gradient(rgba(0 , 0 , 0 ,.6) , rgba(0 , 0 , 0 , .7));
+
+}
+
+
+.menu-item{
+
+    color : #eee;
+    font-size : 16px;
+    transition : color .5s ;
+    
+    }
+    
+    .menu-item :hover{
+    
+    color : #70aed2be;  
+    
+    
+    }
+
+    
+    .line-1 , .line-2 , .line-3{
+        
+        width :23px;
+        height :3px;
+        margin :5px;
+        transition : all .4s;
+    
+    }
+    
+    
+    .change .line-1{
+    
+        transform : rotate(-45deg) translate(-6px , 5px);
+    }
+    
+    .change .line-2{
+    
+        opacity : 0;
+    }
+    
+    .change .line-3{
+    
+        transform : rotate(45deg) translate(-6px , -5px);
+    }
+
+
+.nav-link{
+
+    color:#eee;
+    transition:all 0.7s;
+}
+
+
+.nav-link:hover{
+
+  text-decoration: none;
+}
+
+.inner-text{
+
+    font-size:16px;
+}
+
+.UnderLine{
+ 
+ border:2px rgba(49, 211, 0, 0.575) solid;
+}
+
+.Footer-link{
+
+    color:#eee;
+    font-size :15px;
+    transition:all 0.4s;
+}
+.Footer-link:hover {
+    color:#2980b9;
+    text-decoration:none;
+    cursor:pointer;
+
+}
+
+footer{
+    background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6));
+
+}
+
+.Login{
+
+    background:url(../Images/Royal\ Blue.jpg);
+  
+}

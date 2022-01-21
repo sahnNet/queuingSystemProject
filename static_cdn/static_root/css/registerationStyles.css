@@ -1,0 +1,124 @@
+@font-face{
+
+    src:url(../Fonts/iranyekanwebbold.ttf) format("truetype");
+    font-family:yekan;
+}
+
+body{
+        font-family:yekan;
+        height:100vh;
+        background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6)),url(../Images/JjEKYm.png);;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment:fixed;  
+}
+
+
+/* header */
+
+
+.nav-styles{
+    padding : 22px;
+    background : linear-gradient(rgba(0 , 0 , 0 ,.3) , rgba(0 , 0 , 0 , .5));
+    /*transition : all .7s ;*/
+}
+
+
+
+.nav-fade{
+
+    padding : 5px 22px;
+    background :linear-gradient(rgba(0 , 0 , 0 ,.6) , rgba(0 , 0 , 0 , .7))
+
+}
+
+ 
+ .nav-link{
+
+color:#eee;
+transition: all  0.6s;
+
+}  
+
+.menu-item{
+
+    color : #eee;
+    font-size : 16px;
+    transition : color .5s ;
+    
+    }
+    
+    .menu-item :hover{
+    
+    color : #70aed2be;  
+    
+    
+    }
+    
+    .line-1 , .line-2 , .line-3{
+        
+        width :23px;
+        height :3px;
+        margin :5px;
+        transition : all .4s;
+    
+    }
+    
+    
+    .change .line-1{
+    
+        transform : rotate(-45deg) translate(-6px , 5px);
+    }
+    
+    .change .line-2{
+    
+        opacity : 0;
+    }
+    
+    .change .line-3{
+    
+        transform : rotate(45deg) translate(-6px , -5px);
+    }
+
+/* end of header */
+
+
+
+
+/* Footer */
+
+/* utility */
+
+.lh-1{
+
+    line-height:30px;
+}
+
+
+.lh-2{
+
+    line-height:35px;
+}
+
+/* End Of Utility */
+
+footer{
+
+    background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6));
+
+}
+
+.Footer-link{
+
+    color:#eee;
+    font-size :15px;
+    transition:all 0.4s;
+}
+
+.Footer-link:hover{
+   color:#2980b9;
+   text-decoration:none;
+   cursor:pointer;
+}
+/* End Of Footer */

@@ -1,0 +1,351 @@
+@font-face{
+
+src :url("../Fonts/iranyekanwebbold.ttf") format("truetype");
+
+font-family : yekan ; 
+
+}
+
+body{
+
+    font-family : yekan ;
+    background-color:#eee;
+ 
+}
+
+
+/* specific styles */ 
+
+.lh-1{
+
+    line-height : 30px;
+}
+
+.lh-2{
+
+    line-height : 35px;
+}
+
+.underline{
+    border:3px solid #eee;
+    width:150px;
+    margin:auto;
+}
+
+.underline-dark{
+    border:3px solid #888;
+    width:150px;
+    margin:auto;
+}
+
+/* end of specific styles */
+
+
+/* header */
+
+header{
+height : 100vh;
+background :linear-gradient(rgba(0, 0,0, 0.452) , rgba(0,0,0, 0.123)), url(../Images/banner.jpg);
+background-size : cover ; 
+background-position : center;
+background-repeat : no-repeat;
+background-attachment : fixed ; 
+}
+
+
+.header-text{
+
+box-shadow:5px 6px 7px 7px rgba(18, 0, 211, 0.479);
+border-radius:4px;
+padding:8px;
+color:powderblue;
+}
+
+.header-text-color{
+
+ animation-name:To-Change-Color;
+ animation-duration:.6s;
+ transition:all 0.5s;
+
+}
+
+@keyframes To-Change-Color{
+
+0%{
+
+    opacity:0;
+}
+
+100%{
+
+    opacity:1;
+   
+}
+
+
+}
+
+@media(max-width:653px){
+
+    .header-text{
+        display:none;
+    }
+}
+/* banner */
+
+.banner{
+
+    position : absolute;
+    top : 40%;
+    bottom :40%;
+    right : 30%;
+    transform : translate(17% , -70%);
+
+}
+
+.banner-heading{
+
+    animation-name: text-animation ;
+    animation-duration : 2s;
+}
+.banner-text{
+
+    animation-name: text-animation;
+    animation-duration : 2s;
+    animation-delay : .5s;
+
+}
+
+@keyframes text-animation {
+
+    0%{
+         
+        color : white;
+    
+    }
+
+    100%{
+
+        color: orangered;
+    }
+}
+
+
+.Change-Color{
+    color:rgb(255, 0, 0);
+    transition : color .5s ;
+}
+
+@media(max-width:840px){
+
+    .Resp{
+      
+        font-size:12px;
+    }
+}
+
+/* end of banner */
+
+
+/*navbar */
+
+.nav-styles{
+    padding : 30px;
+    background : linear-gradient(rgba(0 , 0 , 0 ,.3) , rgba(0 , 0 , 0 , .5));
+    /*transition : all .7s ;*/
+}
+
+
+
+.nav-fade{
+
+    padding : 5px 30px;
+    background :linear-gradient(rgba(0 , 0 , 0 ,.6) , rgba(0 , 0 , 0 , .7));
+
+}
+
+
+.menu-item{
+
+color : #eee;
+font-size : 16px;
+transition : color .5s ;
+
+}
+
+.menu-item :hover{
+
+color : #70aed2be;  
+
+}
+
+.line-1 , .line-2 , .line-3{
+    
+    width :23px;
+    height :3px;
+    margin :5px;
+    transition : all .4s;
+
+}
+
+
+.change .line-1{
+
+    transform : rotate(-45deg) translate(-6px , 5px);
+}
+
+.change .line-2{
+
+    opacity : 0;
+}
+
+.change .line-3{
+
+    transform : rotate(45deg) translate(-6px , -5px);
+}
+
+/* end of navbar */
+
+.modal-banner{
+
+    background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)),url(../Images/b3.jpg);
+    background-repeat:no-repeat;
+}
+
+
+/* end of header */
+
+
+/* Awards */
+
+
+.move-to-right {
+
+animation-name : Move-To-Right;
+animation-duration :4s;
+
+  
+}
+
+@keyframes Move-To-Right{
+
+0%{
+    opacity : 0 ;
+    transform : translateX(-120px);
+}
+
+100%{
+
+    opacity : 1 ;
+    transform : translateX(0px);
+}
+
+}
+
+.move-to-left {
+    animation-name : Move-To-left;
+    animation-duration : 4s;
+}
+
+@keyframes Move-To-left {
+
+0%{
+
+    opacity : 0 ;
+    transform : translateX(30px);
+    
+}
+100%{
+
+    
+    opacity : 1 ;
+    transform : translateX(0px);
+}
+
+}
+
+/* end of Awards */
+
+
+
+/* Services */
+
+.heading{
+
+    position:absolute;
+    bottom:40px;
+    left:0;
+    background-color :#2980b9;
+    cursor:pointer;
+    opacity:.7;
+    font-size:25px;
+    width:60%;
+    transition:all .7s;
+
+}
+
+
+.heading:hover{
+
+    opacity:1;
+}
+
+.card-shadow{
+
+    box-shadow:5px 5px 5px 5px #0002446b;
+
+}
+
+
+/* end of Services */
+
+/* Gallery */
+
+.Gallery-item{
+
+    color:#777;
+    cursor:pointer;
+    user-select:none;
+
+}
+
+.active-item{
+    color:#2980b9;
+}
+/* end of Gallery */
+
+
+.Slide-Theme{
+    background-color:#2980b9;
+}
+
+/* Contact */
+
+.Contact{
+
+    background:linear-gradient(213deg, rgba(19, 29, 50, 0.71) ,rgba(34,19,61,-0.1)) ,url(../Images/Contact.png);
+    
+}
+
+
+/* End Of Contact */
+
+/* footer */
+footer{
+
+    background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4));
+}
+.Footer-link{
+
+    color:#eee;
+    font-size:14px;
+}
+
+.Footer-link:hover{
+
+    text-decoration:none;
+    cursor:pointer;
+}
+
+/* End Of footer */
+

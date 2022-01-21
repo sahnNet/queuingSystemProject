@@ -1,0 +1,19 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.fa.min.css' %}"/>
+<link href="{% static 'Images/logo.png' %}" rel="title icon"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+{% if request.resolver_match.url_name == 'homeView' %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+{% elif request.resolver_match.url_name == 'loginView' %}
+    <link rel="stylesheet" href="{% static 'css/loginStyles.css' %}"/>
+{% elif request.resolver_match.url_name == 'registerView' %}
+    <link rel="stylesheet" href="{% static 'css/registrationStyles.css' %}"/>
+{% elif request.resolver_match.url_name == 'accountView' %}
+    <link rel="stylesheet" href="{% static 'css/userPanel.css' %}"/>
+{% elif request.resolver_match.url_name == 'accountConversationView' %}
+    <link rel="stylesheet" href="{% static 'css/userConversation.css' %}"/>
+{% elif request.resolver_match.url_name == 'appointmentView' %}
+    <link rel="stylesheet" href="{% static 'css/Apointment.css' %}"/>
+{% elif request.resolver_match.url_name == 'doctorPageView' %}
+    <link rel="stylesheet" href="{% static 'css/TheFirstDoctorPage.css' %}"/>
+{% endif %}

@@ -1,0 +1,222 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-21 15:14+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\settings.py:131
+msgid "English"
+msgstr "انگلیسی"
+
+#: .\settings.py:132
+msgid "Persian"
+msgstr "فارسی"
+
+#: .\views.py:8
+msgid "Pant"
+msgstr "ضربان"
+
+#: .\views.py:9 .\views.py:28
+msgid "Home"
+msgstr "خانه"
+
+#: .\views.py:10 .\views.py:62
+msgid "Honors"
+msgstr "افتخارات"
+
+#: .\views.py:11 .\views.py:29 .\views.py:68
+msgid "Services"
+msgstr "خدمات"
+
+#: .\views.py:12 .\views.py:30 .\views.py:73
+msgid "Gallery"
+msgstr "گالری"
+
+#: .\views.py:13 .\views.py:31 .\views.py:78
+msgid "Physicians"
+msgstr "پزشکان"
+
+#: .\views.py:14 .\views.py:32
+msgid "Contact us"
+msgstr "ارتباط با ما"
+
+#: .\views.py:15
+msgid "Account"
+msgstr "حساب کاربری"
+
+#: .\views.py:16
+msgid "Exit"
+msgstr "خروج"
+
+#: .\views.py:17
+msgid "Log in"
+msgstr "ورود"
+
+#: .\views.py:18
+msgid "Register"
+msgstr "ثبت نام"
+
+#: .\views.py:25
+msgid "Schedule in the shortest time"
+msgstr "نوبت دهی در کمترین زمان"
+
+#: .\views.py:27
+msgid "Pages"
+msgstr "صفحات"
+
+#: .\views.py:33
+msgid "You want help?"
+msgstr "کمک می خواهید؟"
+
+#: .\views.py:34
+msgid "Support"
+msgstr "پشتیبانی"
+
+#: .\views.py:35
+msgid "Medical advice"
+msgstr "مشاوره پزشکی"
+
+#: .\views.py:36
+msgid "Announcements"
+msgstr "اطلاعیه ها"
+
+#: .\views.py:37
+msgid "About us"
+msgstr "درباره ما"
+
+#: .\views.py:38
+msgid "Developers Amir Hossein Hekmat and Seyed Ali Hosseini Nasab"
+msgstr "توسعه دهندگان امیر حسین حکمت و سید علی حسینی نسب"
+
+#: .\views.py:50
+msgid "Hospital appointments"
+msgstr "نوبت دهی بیمارستان"
+
+#: .\views.py:51
+msgid ""
+"Scheduling offices / treatment centers / hospitals in the country online"
+msgstr "نوبت دهی مطب ها/ مراکز درمان/ بیمارستان های کشور به صورت آنلاین"
+
+#: .\views.py:52
+msgid ""
+"\n"
+"        In today's world we have learned to search the Internet for "
+"everything. \n"
+"        It's very common to choose services, especially medical services. \n"
+"        So, it is better to provide hospitalization for doctors and medical "
+"centers so that people can choose the doctor \n"
+"        they want more easily and with more information and make an "
+"appointment. Accordingly, our site provides online \n"
+"        appointments along with other appointment methods to the audience so "
+"that the managers of medical centers and \n"
+"        doctors can offer their services to patients in the best way.\n"
+"        "
+msgstr ""
+"\n"
+"در دنیای امروز یاد گرفته‌ایم برای هرکاری در اینترنت جستجو کنیم. این امر به "
+"مقدار خیلی زیاد برای انتخاب خدمات مخصوصا خدمات پزشکی رایج است.\n"
+"پس چه بهتر که برای پزشکان و مراکز درمانی بستری فراهم شود تا مردم بتوانند "
+"پزشک مورد نظرشان را راحت تر و با اطلاعات بیشتری انتخاب کنند و\n"
+"نوبت بگیرند. بر همین اساس سایت ما نوبت دهی اینترنتی را در کنار دیگر روش‌های "
+"نوبت دهی در اختیار مخاطبین قرار داده تا مدیران مراکز درمانی و\n"
+"پزشکان بتوانند خدمات‌شان را به بهترین نحو به بیماران عرضه کنند.\n"
+"        "
+
+#: .\views.py:60
+msgid "Search easily and quickly"
+msgstr "راحت و سریع جست و جو کنید"
+
+#: .\views.py:61
+msgid "Search"
+msgstr "جست و جو"
+
+#: .\views.py:63
+msgid "Top badge"
+msgstr "نشان برتر"
+
+#: .\views.py:64
+msgid "Health badge"
+msgstr "نشان سلامت"
+
+#: .\views.py:65
+msgid "Qualitatively selected"
+msgstr "برگزیده کیفی"
+
+#: .\views.py:66
+msgid "The highest quality service"
+msgstr "با کیفیت ترین خدمات"
+
+#: .\views.py:67
+msgid "Easy scheduling in all of Iran"
+msgstr "نوبت دهی آسان در تمام ایران"
+
+#: .\views.py:69
+msgid "Part of our services"
+msgstr "بخشی از خدمات ما"
+
+#: .\views.py:70
+msgid "Hygiene"
+msgstr "رعایت بهداشت"
+
+#: .\views.py:71
+msgid "Experienced doctors"
+msgstr "پزشکان مجرب"
+
+#: .\views.py:72
+msgid "Smart equipment"
+msgstr "تجهیزات هوشمند"
+
+#: .\views.py:74
+msgid "All"
+msgstr "گالری"
+
+#: .\views.py:75
+msgid "Part One"
+msgstr "بخش یک"
+
+#: .\views.py:76
+msgid "Part Two"
+msgstr "بخش دو"
+
+#: .\views.py:77
+msgid "Part Three"
+msgstr "بخش سه"
+
+#: .\views.py:79
+msgid "Get an appointment"
+msgstr "گرفتن نوبت"
+
+#: .\views.py:80
+msgid "Provinces"
+msgstr "استان ها"
+
+#: .\views.py:81
+msgid "Cities"
+msgstr "شهر ها"
+
+#: .\views.py:82
+msgid "Hospitals"
+msgstr "بیمارستان ها"
+
+#~ msgid "Clinic/Doctor"
+#~ msgstr "مطب/دکتر"
+
+#~ msgid "Send"
+#~ msgstr "ارسال"
+
+#~ msgid "Email"
+#~ msgstr "ایمیل"

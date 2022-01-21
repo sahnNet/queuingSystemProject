@@ -1,0 +1,61 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+<!--navbar-->
+
+<nav class="navbar bg-dark  navbar-expand-lg fixed-top nav-styles  " xmlns="http://www.w3.org/1999/html">
+    <a class="nav-brand user-select-none text-light">{{ pant }}<img class="rounded" style="height : 50px"
+                                                                    src="{% static 'Images/logo.png' %}"/></a>
+    <button class="navbar-toggler nav-button " data-toggle="collapse" data-target="#myCollapse">
+        <div class="line-1 bg-white"></div>
+        <div class="line-2 bg-white"></div>
+        <div class="line-3 bg-white"></div>
+    </button>
+    <div class="collapse navbar-collapse" id="myCollapse">
+        <ul class="navbar-nav list-unsettled ">
+
+            <li class="nav-item"><a href="{% url 'homeView' %}" class="nav-link  menu-item mr-3">{{ home }}</a></li>
+            <li class="nav-item "><a href="{% url 'homeView' %}#s2" class="nav-link menu-item mr-3">{{ honors }}</a>
+            </li>
+            <li class="nav-item "><a href="{% url 'homeView' %}#s3" class="nav-link menu-item mr-3"> {{ services }}</a>
+            </li>
+            <li class="nav-item "><a href="{% url 'homeView' %}#s4" class="nav-link menu-item mr-3">{{ gallery }}</a>
+            </li>
+            <li class="nav-item "><a href="{% url 'homeView' %}#s5"
+                                     class="nav-link menu-item mr-3"> {{ physicians }}</a></li>
+            <li class="nav-item "><a href="{% url 'homeView' %}#s6" class="nav-link menu-item mr-3">{{ contactus }}</a>
+            </li>
+            {% if request.user.is_authenticated %}
+                <li class="nav-item "><a href="{% url 'accountView' %}"
+                                         class="nav-link menu-item mr-3 ">{{ account }}</a></li>
+                <li class="nav-item "><a href="{% url 'logoutView' %}" class="nav-link menu-item mr-3 ">{{ exit }}</a>
+                </li>
+            {% else %}
+                <li class="nav-item "><a href="{% url 'loginView' %}" class="nav-link menu-item mr-3 ">{{ login }}</a>
+                </li>
+                <li class="nav-item "><a href="{% url 'registerView' %}"
+                                         class="nav-link menu-item mr-3 ">{{ register }}</a>
+                </li>
+            {% endif %}
+            <form class="form-check-label" action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <select class="nav-item btn btn-light" name="language">
+                    {% for language in languages %}
+                        <option class="nav-link menu-item mr-3 " style="background: lightsteelblue"
+                                value="{{ language.code }}"
+                                {% if language.code == LANGUAGE_CODE %}
+                                selected {% endif %}>{{ language.name_local }}</option>
+                    {% endfor %}
+                </select>
+                <input class="btn btn-light" type="submit" value="{{ go }}">
+            </form>
+
+
+        </ul>
+    </div>
+</nav>
+
+<!--end of navbar-->
+

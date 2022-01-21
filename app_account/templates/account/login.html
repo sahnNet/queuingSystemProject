@@ -1,0 +1,41 @@
+{% extends 'shared/_MainLayout.html' %}
+{% block content %}
+    <!--Login-->
+    <section class="py-5 Login mt-5">
+        <div class="container-fluid">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-6">
+                    <h2 class="my-3">{{ login }}<span class="text-light  inner-text mx-4 my-4">{{ title }}</span>
+                    </h2>
+                    <div class="UnderLine my-3"></div>
+                    <form method="post"><!-- form -->
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="{{ loginForm.user_name.id_for_label }}" class="form-control-label-lg text-white-50">{{ loginForm.user_name.label }}</label>
+                            {{ loginForm.user_name }}
+                            {% for error in loginForm.user_name.errors %}
+                                <p style="color: red;">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ loginForm.password.id_for_label }}" class="form-control-label-lg text-white-50">{{ loginForm.password.label }}</label>
+                            {{ loginForm.password }}
+                            {% for error in loginForm.password.errors %}
+                                <p style="color: red;">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                        <div class="form-check my-4">
+                            <input id="CheckBox" type="checkbox" class="form-check-input ">
+                            <label for="CheckBox" class="form-check-label text-white-50">{{ rememberMe }}</label>
+                        </div>
+                        <button class="btn btn-success">{{ enter }}</button>
+                        <a href="#" class="btn btn-outline-danger text-white-50">{{ forgotPassword }}</a>
+                    </form><!-- end form -->
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Of Login-->
+{% endblock %}

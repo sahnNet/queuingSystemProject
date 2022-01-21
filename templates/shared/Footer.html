@@ -1,0 +1,66 @@
+{% load static %}
+<!--Footer-->
+<footer class="Footer bg-dark  p-4">
+<div class="container-fluid">
+  <div class="row py-4">
+    <div class="col-lg-4 col-sm-6">
+     <h5 class="text-primary">{{ titleDescription }}</h5>
+      <p class=" text-light lh-1 "></p>
+    </div>
+
+    <div class="col-lg-2 col-sm-6">
+     <h5  class="text-warning">{{ pages }}</h5>
+     <ul class="list-unsettled">
+      <li>
+        <a href="{% url 'homeView' %}" class="nav-link  menu-item mr-3">{{ home }}</a>
+      </li>
+      <li>
+        <a href="{% url 'homeView' %}#s3" class="nav-link menu-item mr-3"> {{ services }}</a>
+      </li>
+      <li>
+        <a href="{% url 'homeView' %}#s4" class="nav-link menu-item mr-3">{{ gallery }}</a>
+      </li>
+      <li>
+        <a href="{% url 'homeView' %}#s5" class="nav-link menu-item mr-3"> {{ physicians }}</a>
+      </li>
+      <li>
+        <a href="{% url 'homeView' %}#s6" class="nav-link menu-item mr-3">{{ contactus }}</a>
+      </li>
+     </ul>
+    </div>
+
+    <div class="col-lg-2 col-sm-6">
+      <h5 class="text-success">{{ help }}</h5>
+      <ul class="list-unsettled">
+      <li>
+        <a href="#" class="Footer-link">{{ support }}</a>
+      </li>
+      <li>
+        <a href="#" class="Footer-link">{{ medicalAdvice }}</a>
+      </li>
+      <li>
+        <a href="#" class="Footer-link">{{ announcements }}</a>
+      </li>
+      </ul>
+    </div>
+
+    <div class="col-lg-4 col-sm-6">
+      <h5 class="text-info">{{ aboutUs }}</h5>
+      <p  class="text-light">{{ aboutUsDescriptions }}</p>
+
+      <ul class="list-inline my-3" >
+        <li class="list-inline-item mx-3">
+         <i class="fab fa-instagram fa-2x text-danger"></i>
+        </li>
+        <li class="list-inline-item mx-3">
+          <i class="fab fa-twitter fa-2x text-primary"></i>
+        </li>
+        <li class="list-inline-item">
+         <i class="fab fa-facebook fa-2x text-info"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</footer>
+<!--End Of Footer-->

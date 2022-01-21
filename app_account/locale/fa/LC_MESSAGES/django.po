@@ -1,0 +1,195 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-30 19:07+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\forms.py:9
+msgid "Enter your username"
+msgstr "نام کاربری خود را وارد کنید"
+
+#: .\forms.py:12
+msgid "user name"
+msgstr "نام کاربری"
+
+#: .\forms.py:16
+msgid "Enter your password"
+msgstr "رمز عبور خود را وارد کنید"
+
+#: .\forms.py:19 .\forms.py:68 .\forms.py:70
+msgid "password"
+msgstr "رمز عبور"
+
+#: .\forms.py:26
+msgid "Username not found"
+msgstr "نام کاربری پیدا نشد"
+
+#: .\forms.py:33 .\forms.py:35
+msgid "National Code"
+msgstr "کد ملی"
+
+#: .\forms.py:37
+msgid "It can be up to 10 characters"
+msgstr "حداکثر 10 کاراکتر می تواند باشد"
+
+#: .\forms.py:38
+msgid "Must be at least 10 characters"
+msgstr "حداقل 10 کاراکتر می تواند باشد"
+
+#: .\forms.py:42 .\forms.py:44
+msgid "First name"
+msgstr "نام"
+
+#: .\forms.py:46 .\forms.py:55
+msgid "It can be up to 50 characters"
+msgstr "حداکثر 50 کاراکتر می تواند باشد"
+
+#: .\forms.py:47 .\forms.py:56
+msgid "Must be at least 1 characters"
+msgstr "حداقل 1 کاراکتر می تواند باشد"
+
+#: .\forms.py:51 .\forms.py:53
+msgid "Last name"
+msgstr "نام خانوادگی"
+
+#: .\forms.py:60 .\forms.py:62 .\views.py:38
+msgid "Email"
+msgstr "ایمیل"
+
+#: .\forms.py:64
+msgid "The entered email is not valid"
+msgstr "ایمیل وارد شده معتبر نیست"
+
+#: .\forms.py:73 .\forms.py:75
+msgid "Repeat the password"
+msgstr "تکرار گذرواژه"
+
+#: .\forms.py:82
+msgid "This username is already registered"
+msgstr "این نام کاربری قبلا ثبت شده است"
+
+#: .\forms.py:95
+msgid "This email is already registered"
+msgstr "این ایمیل قبلا ثبت شده است"
+
+#: .\forms.py:104
+msgid "Password and its repetition are not equal"
+msgstr "رمز عبور و تکرار آن برابر نیستند"
+
+#: .\views.py:16 .\views.py:53
+msgid "My turns"
+msgstr "نوبت های من"
+
+#: .\views.py:17
+msgid "Row"
+msgstr "ردیف"
+
+#: .\views.py:18
+msgid "Shift"
+msgstr "شیفت"
+
+#: .\views.py:19
+msgid "Turn"
+msgstr "نوبت"
+
+#: .\views.py:20
+msgid "Doctor"
+msgstr "دکتر"
+
+#: .\views.py:21
+msgid "Medical center"
+msgstr "مرکز درمانی"
+
+#: .\views.py:22
+msgid "Province"
+msgstr "استان"
+
+#: .\views.py:23
+msgid "City"
+msgstr "شهر"
+
+#: .\views.py:24
+msgid "Date"
+msgstr "تاریخ"
+
+#: .\views.py:25
+msgid "Time"
+msgstr "زمان"
+
+#: .\views.py:26
+msgid "Turn file"
+msgstr "فایل نوبت"
+
+#: .\views.py:49
+msgid "Dashboard"
+msgstr "داشبورد"
+
+#: .\views.py:50
+msgid "My account"
+msgstr "حساب کاربری من"
+
+#: .\views.py:51
+msgid "My conversations"
+msgstr "گفت و گو های من"
+
+#: .\views.py:52
+msgid "Wallet"
+msgstr "کیف پول"
+
+#: .\views.py:54
+msgid "Exit"
+msgstr "خروج"
+
+#: .\views.py:73
+msgid "No user with this name was found"
+msgstr "کاربری با این نام پیدا نشد"
+
+#: .\views.py:75
+msgid "Experience easy appointments with us"
+msgstr "نوبت دهی آسان را با ما تجربه کنید"
+
+#: .\views.py:76
+msgid "Login"
+msgstr "ورود"
+
+#: .\views.py:78
+msgid "Enter"
+msgstr "وارد شوید"
+
+#: .\views.py:79
+msgid "Remember me"
+msgstr "من را به یاد داشته باش"
+
+#: .\views.py:80
+msgid "Forgot your password?"
+msgstr "رمز عبور خود را فراموش کرده اید؟"
+
+#: .\views.py:102
+msgid "Register"
+msgstr "ثبت نام"
+
+#~ msgid "Payment gateway"
+#~ msgstr "درگاه پرداخت"
+
+#~ msgid "Tracking code"
+#~ msgstr "کد پیگیری"
+
+#~ msgid "Amount"
+#~ msgstr "مبلغ"
+
+#~ msgid "Hospital"
+#~ msgstr "بیمارستان"

@@ -1,0 +1,26 @@
+{% load static %}
+{% load render_partial %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Online Hospital</title>
+    {% include 'shared/_HeaderReferences.html' %}
+</head><!--/head-->
+
+<body>
+
+<div dir="auto">
+    {% render_partial 'headerView' %}
+    {% block content %}{% endblock %}
+    {% render_partial 'footerView' %}
+</div>
+
+{% include 'shared/_FooterReferences.html' %}
+
+</body>
+</html>

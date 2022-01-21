@@ -1,0 +1,107 @@
+@font-face{
+src:url(../Fonts/iranyekanwebbold.ttf) ;
+font-family : yekan ;
+
+}
+
+body{
+    font-family: yekan;
+    background-color:#eee;
+}
+
+/* responsive font style */
+@media(max-width : 992px){
+    *{
+        font-size:13px;
+    }
+}
+/* End Of responsive font style * /
+
+
+/* header */
+
+/* navigartion bar */
+
+.nav-styles{
+    padding : 22px ;
+    background : linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+}
+
+
+.nav-fade{
+
+   padding : 6px 30px;
+   background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.7));
+}
+
+
+.line-1 , .line-2 , .line-3{
+    width  :23px;
+    height :3px;
+    margin :5px;
+    transition :all 0.4s;
+}
+
+.change .line-1{
+
+    transform:rotate(-45deg) translate(-6px , 5px);
+
+} 
+.change .line-2{
+    opacity: 0 ;
+
+}
+
+.change .line-3{
+    transform:rotate(45deg) translate(-6px , -5px);
+}
+
+
+.menu-item{
+
+    color:#eee;
+    font-size:16px;
+    transition : all .5s ;
+}
+
+.menu-item:hover{
+    color:#2980b9;
+}
+
+/* End Of navigartion bar */
+
+/* End Of header */
+
+
+
+/* Footer */
+.Footer{
+
+    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4));
+ }
+ .Footer-link{
+ 
+     color:#eee;
+     font-size:14px;
+     transition:all .4s;
+ }
+ 
+ .Footer-link:hover{
+     color:#2980b9;
+     cursor:pointer;
+     text-decoration:none;
+ }
+ 
+ /* End Of Footer */
+ 
+ /* End Of Button style */
+
+.alert-btn{
+     transform:translate(10px,-184px);
+ }
+
+.move{
+
+    transform:translate(-10px,10px);
+}
+/* End Of Button style */ 

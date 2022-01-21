@@ -1,0 +1,19 @@
+{% load static %}
+<script src="{% static 'Scripts/jquery-3.5.1.min.js' %}"></script>
+<script src="{% static 'Scripts/popper.min.js' %}"></script>
+<script src="{% static 'Scripts/bootstrap.min.js' %}"></script>
+{% if request.resolver_match.url_name == 'homeView' %}
+    <script src="{% static 'Scripts/Main.js' %}"></script>
+{% elif request.resolver_match.url_name == 'loginView' %}
+    <script src="{% static 'Scripts/login.js' %}"></script>
+{% elif request.resolver_match.url_name == 'registerView' %}
+    <script src="{% static 'Scripts/registration.js' %}"></script>
+{% elif request.resolver_match.url_name == 'accountView' %}
+    <script src="{% static 'Scripts/userPanel.js' %}"></script>
+{% elif request.resolver_match.url_name == 'accountConversationView' %}
+    <script src="{% static 'Scripts/userConversation.js' %}"></script>
+{% elif request.resolver_match.url_name == 'appointmentView' %}
+    <script src="{% static 'Scripts/Apointment.js' %}"></script>
+{% elif request.resolver_match.url_name == 'doctorPageView' %}
+    <script src="{% static 'Scripts/TheFirstDoctorPage.js' %}"></script>
+{% endif %}

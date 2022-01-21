@@ -1,0 +1,197 @@
+{% extends 'shared/_MainLayout.html' %}
+{% load static %}
+{% load render_partial %}
+
+{% block content %}
+    <!--Search Bar-->
+    <section class="p-5 my-5 bg-secondary ">
+        <div class="container py-4">
+            <div class="row justify-content-center text-center">
+                <div class="col p-3 ">
+                    <h5 class="border border-warning bg-primary text-light rounded p-3">{{ borderText }}</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Script search -->
+        <script type="text/javascript">
+
+            function hospitals() {
+                const hospital = document.getElementById("hospital").value;
+                const specialty = document.getElementById("specialty").value;
+
+                let resultDoctor = "<option value=" + 0 + ">" + "{{ doctors }}" + "</option>"
+                let resultSpecialty = "<option value=" + 0 + ">" + "{{ specialties }}" + "</option>"
+                let specialtyList = Array();
+
+                {% for doctor in doctorsList %}
+                    if (("{{ doctor.hospital.id }}" === hospital || hospital === "0") && ("{{ doctor.specialty.id }}" === specialty || specialty === "0")) {
+                        resultDoctor += "<option value=" + "{{ doctor.id }}" + ">" + "{{ doctor.full_name }}" + "</option>"
+                        let flag = true;
+                        for (let i = 0; i < specialtyList.length; i++) {
+                            if ("{{ doctor.specialty.id }}" === specialtyList[i]) {
+                                flag = false;
+                                break;
+                            }
+                        }
+                        if (flag) {
+                            resultSpecialty += "<option value=" + "{{ doctor.specialty.id }}" + ">" + "{{ doctor.specialty.name }}" + "</option>"
+                            specialtyList.push("{{ doctor.specialty.id }}")
+                        }
+                    }
+                {% endfor %}
+
+                document.getElementById("doctor").innerHTML = resultDoctor
+                document.getElementById("specialty").innerHTML = resultSpecialty
+
+
+            }
+
+            function specialties() {
+                const hospital = document.getElementById("hospital").value;
+                const specialty = document.getElementById("specialty").value;
+
+                let resultDoctor = "<option value=" + 0 + ">" + "{{ doctors }}" + "</option>"
+
+                {% for doctor in doctorsList %}
+                    if (("{{ doctor.hospital.id }}" === hospital || hospital === "0") && ("{{ doctor.specialty.id }}" === specialty || specialty === "0"))
+                        resultDoctor += "<option value=" + "{{ doctor.id }}" + ">" + "{{ doctor.full_name }}" + "</option>"
+
+                {% endfor %}
+
+                document.getElementById("doctor").innerHTML = resultDoctor
+            }
+
+        </script>
+        <!-- /Script search -->
+
+        <div class="container">
+            <form class="form" action="{% url 'appointmentView' %}" method="get">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-3">
+                        <label for="hospital" class="my-2"><i
+                                class="fas fa-hospital-alt text-success fa-2x"></i></label>
+                        <select class="form-control" id="hospital" name="h" onchange="hospitals()">
+                            <option value="0"{% if h == 0 %} selected {% endif %}>{{ hospitals }}</option>
+                            {% for hospital in hospitalsList %}
+                                <option value="{{ hospital.id }}"{% if h == hospital.id %}
+                                        selected {% endif %}>{{ hospital.name }}</option>
+                            {% endfor %}
+
+                        </select>
+                    </div>
+                    <div class="col-lg-3 mx-2">
+                        <label for="specialization" class="my-2"><i
+                                class="fas fa-user-tag text-black-50 fa-2x"></i></label>
+                        <select class="form-control" id="specialty" name="s" onchange="specialties()">
+                            <option value="0"{% if s == 0 %} selected {% endif %}>{{ specialties }}</option>
+                            {% for specialty in specialtiesList %}
+                                <option value="{{ specialty.id }}"{% if s == specialty.id %}
+                                        selected {% endif %}>{{ specialty.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-lg-3">
+                        <label for="doctor" class="my-2"><i class=" fas fa-user-md text-light  fa-2x"></i></label>
+                        <select class="form-control" id="doctor" name="d">
+                            <option value="0"{% if d == 0 %} selected {% endif %}>{{ doctors }}</option>
+                            {% for doctor in doctorsList %}
+                                <option value="{{ doctor.id }}"{% if d == doctor.id %}
+                                        selected {% endif %}>{{ doctor.full_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-lg-2 my-5">
+                        <button class="btn btn-danger " type="submit" name="pc" value=
+                                {% if request.GET.p is None or request.GET.c is None %}
+                                    {{ pc }}
+                                {% else %}
+                                    "{{ request.GET.p }}{{ request.GET.c }}"
+                                {% endif %}>
+                            <i class="fas fa-search "></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!--End Of Search Bar-->
+
+    <!--Appointment Table-->
+    <Section class="p-5 mx-4 my-3 text-center">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+
+                <div class="table-responsive row justify-content-center ">
+                    <table class="table table-dark table-bordered table-hover  p-5 rounded">
+                        <th class=" text-center">{{ medicalCenter }}</th>
+                        <th class=" text-center">{{ doctor }}</th>
+                        {% if LANGUAGE_BIDI %}
+                            <th class=" text-center">{{ tomorrowFa }}</th>
+                        {% else %}
+                            <th class=" text-center">{{ tomorrowEn }}</th>
+                        {% endif %}
+
+                        {% for doctor in doctorsSelect %}
+                            <tr class="text-center">
+                                <td class=" text-center">{{ doctor.hospital.name }}</td>
+
+                                <td>
+                                    <div class="row justify-content-center  text-center p-3">
+                                        <div class="col-lg-3 px-5">
+                                            <img style="height:150px ; width:115px" src="{{ doctor.image.url }}"
+                                                 class="rounded mx-4  d-xs-block d-sm-block d-md-block">
+                                        </div>
+                                        <div class="col-lg-9 px-5">
+                                            <div class="d-flex flex-column flex-wrap  my-3">
+                                                <h6>{{ doctor.full_name }}</h6>
+                                                <span>{{ doctor.specialty }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <div class="row">
+                                    <div class="col px-5">
+                                    {% if doctor.is_morning_shift %}
+                                        <td class="btn btn-light button  mb-3  p-5 py-4"
+                                            style="background-color: {% if doctor.is_full_morning_turn %} indianred {% else %} limegreen {% endif %}">
+                                                <h6>{{ readyToBook }}</h6>
+                                                <a class="text-black-50" methods="get"
+                                                   href="{% url 'doctorPageView' d=doctor.id %}?shift=morning">{{ morningShift }}</a>
+                                        </td>
+                                    {% endif %}
+                                        {% if doctor.is_evening_shift %}
+                                            <td class="btn btn-light button  mb-3  p-5 py-4"
+                                                style="background-color: {% if doctor.is_full_evening_turn %} indianred {% else %} limegreen {% endif %}">
+                                                <h6>{{ readyToBook }}</h6>
+                                                <a class="text-black-50" methods="get"
+                                                   href="{% url 'doctorPageView' d=doctor.id %}?shift=evening">{{ eveningShift }}</a>
+                                            </td>
+                                        {% endif %}
+                                        {% if doctor.is_night_shift %}
+                                            <td class="btn btn-light button  mb-4  py-4 p-5"
+                                                style="background-color: {% if doctor.is_full_night_turn %} indianred {% else %} limegreen {% endif %}">
+                                                <h6>{{ readyToBook }}</h6>
+                                                <a class="text-black-50"
+                                                   href="{% url 'doctorPageView' d=doctor.id %}?shift=night">{{ nightShift }}</a>
+                                            </td>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </Section>
+    <!--End Of Appointment Table-->
+{% endblock %}
+
+
+
+
+
+
+
+

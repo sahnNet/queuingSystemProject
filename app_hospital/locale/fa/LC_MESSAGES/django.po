@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-06 17:18+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\apps.py:8
+msgid "Hospitals module"
+msgstr "ماژول بیمارستان ها"
+
+#: .\models.py:26 .\models.py:37 .\models.py:49 .\models.py:63
+msgid "Name"
+msgstr "نام"
+
+#: .\models.py:29 .\models.py:38 .\views.py:158
+msgid "Province"
+msgstr "استان"
+
+#: .\models.py:30
+msgid "Provinces"
+msgstr "استان ها"
+
+#: .\models.py:41 .\models.py:51 .\views.py:159
+msgid "City"
+msgstr "شهر"
+
+#: .\models.py:42
+msgid "Cities"
+msgstr "شهر ها"
+
+#: .\models.py:50 .\views.py:160
+msgid "Telephone number"
+msgstr "شماره تلفن"
+
+#: .\models.py:52
+msgid "Location"
+msgstr "مکان"
+
+#: .\models.py:55 .\models.py:78 .\views.py:157
+msgid "Hospital"
+msgstr "بیمارستان"
+
+#: .\models.py:56 .\views.py:99
+msgid "Hospitals"
+msgstr "بیمارستان ها"
+
+#: .\models.py:66 .\models.py:77
+msgid "Specialty"
+msgstr "تخصص"
+
+#: .\models.py:67 .\views.py:100 .\views.py:146
+msgid "Specialties"
+msgstr "تخصص ها"
+
+#: .\models.py:74
+msgid "Full name"
+msgstr "نام و نام خانوادگی"
+
+#: .\models.py:75
+msgid "Email"
+msgstr "ایمیل"
+
+#: .\models.py:76
+msgid "Image"
+msgstr "تصویر"
+
+#: .\models.py:79 .\views.py:105
+msgid "Morning shift"
+msgstr "شیفت صبح"
+
+#: .\models.py:80 .\views.py:106
+msgid "Evening shift"
+msgstr "شیفت عصر"
+
+#: .\models.py:81 .\views.py:107
+msgid "Night shift"
+msgstr "شیفت شب"
+
+#: .\models.py:84 .\views.py:103
+msgid "Doctor"
+msgstr "دکتر"
+
+#: .\models.py:85 .\views.py:101
+msgid "Doctors"
+msgstr "دکتر ها"
+
+#: .\views.py:102
+msgid "Medical center"
+msgstr "مرکز درمانی"
+
+#: .\views.py:104
+msgid ""
+"Simply find the doctor, clinic, treatment center or hospital you are looking "
+"for"
+msgstr ""
+"به سادگی پزشک، کلینیک، مرکز درمانی یا بیمارستان مورد نظر خود را پیدا کنید"
+
+#: .\views.py:108
+msgid "Ready to book"
+msgstr "آماده رزرو"
+
+#: .\views.py:147
+msgid "Education / Academy"
+msgstr "تحصیلات / آکادمی"
+
+#: .\views.py:148
+msgid "Honors and awards"
+msgstr "افتخارات و جوایز"
+
+#: .\views.py:149
+msgid "Physician contact information"
+msgstr "اطلاعات تماس پزشک"
+
+#: .\views.py:150
+msgid "Your peace and health is our main goal"
+msgstr "آرامش و سلامتی شما، هدف اصلی ماست"
+
+#: .\views.py:151
+msgid "Morning"
+msgstr "صبح"
+
+#: .\views.py:152
+msgid "Evening"
+msgstr "عصر"
+
+#: .\views.py:153
+msgid "Night"
+msgstr "شب"
+
+#: .\views.py:154
+msgid "OK"
+msgstr "ثبت"
+
+#: .\views.py:155
+msgid "Cancel"
+msgstr "لغو"
+
+#: .\views.py:156
+msgid "Introduction of offices"
+msgstr "معرفی مطب ها"
+
+#: .\views.py:161
+msgid "Show on the map"
+msgstr "نمایش بر روی نقشه"

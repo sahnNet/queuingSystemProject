@@ -1,0 +1,32 @@
+{% load static %}
+
+<!--userCard-->
+<div class="col-md-3 col-xs-6 py-5">
+    <div class="card">
+        <div class="card-header text-center">
+            <h6 class="text-muted">{{ dashboard }}</h6>
+        </div>
+        <div class="card-body  text-center">
+            <a href="{% url 'accountView' %}" class="Card-Link "><i
+                    class="fas fa-user-alt   my-2   ml-2 text-black-50 d-none d-md-block"></i>{{ myAccount }}</a>
+            <div class="underline my-2 bg-secondary">
+
+            </div>
+            <a href="{% url 'accountConversationView' %}" class="Card-Link "><i
+                    class="fas fa-comments   my-2     ml-2  text-black-50 d-none d-md-block "></i>{{ myConversations }}</a>
+            <div class="underline my-2 bg-secondary">
+            </div>
+            <a href="#" class="Card-Link"><i class="fas fa-wallet      my-2     ml-2 text-body d-none d-md-block"></i>{{ wallet }}</a>
+            <div class="underline my-2 bg-secondary">
+
+            </div>
+            <a href="{% url 'accountView' %}" class="Card-Link"><i
+                    class="fas fa-list-alt     my-2    ml-2 text-dark d-none d-md-block"></i>{{ myTurns }}</a>
+            <div class="underline my-2 bg-secondary">
+
+            </div>
+            <a href="{% url 'logoutView' %}" class="Card-Link"><i class="fas fa-sign-out-alt  my-2   ml-2 text-body d-none d-md-block "></i>{{ exit }}</a>
+        </div>
+    </div>
+</div>
+<!--End Of userCard-->
